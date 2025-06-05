@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: grey;
+    }
+    .flex {
+      display: flex;
+    }
+    .white {
+      background-color: white;
+    }
+    .flex1 {
+      flex: 1;
+    }
+    .column {
+      flex-direction: column;
+    }
+    .mg8 {
+      margin: 8px;
+    }
+    .mgr8 {
+      margin-right: 8px;
+    }
+    .mgt8 {
+      margin-top: 8px;
+    }
+    .bf {
+      box-shadow: 0px 3px 20px 1px;
+    }
+    .sf {
+      box-shadow: 0px 1px 5px 1px;
+    }
+    @media (max-width: 600px) {
+      .adapt {
+        display: none;
+      }
+      .straight {
+        flex-direction: column;
+      }
+    }
+    #ig-link:hover {
+      transform: scale(1.05); /* subtle zoom */
+      transition: 0.3s;
+      cursor: pointer;
+    }
+  </style>
+
+  <body class="flex">
+    <!--main chunk-->
+    <div class="flex1 flex column">
+      <!--head chunk-->
+
+      <div
+        style="
+          height: 60px;
+          align-items: center;
+          padding: 0 16px;
+          justify-content: space-between;
+        "
+        class="white bf flex"
+      >
+        <!-- Icon (left side) -->
+        <img src="./icon.png" alt="icon" width="100" height="100" />
+
+        <!-- Datetime (right side) -->
+        <div
+          id="datetime"
+          style="font-family: Arial; font-size: 16px; margin-left: auto"
+        ></div>
+      </div>
+      <!--inform chunk-->
+      <div style="overflow: auto" class="flex1 flex straight">
+        <!--left chunk-->
+        <div style="flex: 3" class="flex column mg8">
+          <!--data chunk-->
+          <div class="flex straight">
+            <!--data item-->
+            <div style="height: 140px" class="white flex1 mgr8 sf">
+              <p
+                style="
+                  padding: 15px 15px;
+                  font-family: 'Courier New', Courier, monospace;
+                "
+              >
+                Greetings, I am Hugo, Cheng Ho Hin, Hongkonger.A seventeen that
+                is preparing for University life . I want to be a media content
+                creator and code engineer (still learning), interested in
+                philosophy and coding. Hope to share my experience on learning
+                with you all
+              </p>
+            </div>
+          </div>
+          <!--list chunk-->
+          <div class="flex column">
+            <!--list item-->
+            <div style="height: 30px; width: 300px" class="white mgt8 sf">
+              <p
+                style="margin: 10px; font-family: Arial, Helvetica, sans-serif"
+              >
+                the item I am working on now
+              </p>
+            </div>
+            <div style="height: 160px" class="white mgt8 sf column">
+             
+                <p style="font-size: xx-large; margin-top: 0px">philosophy</p>
+              
+              <p style="font-size: large">
+                workong on Hegal's now. I want to start my path on philosophy
+                from germany philosophy first. As I am interested in his theroy
+                , I know it is hard but....interest is the best teacher on all
+                start, isn't it?
+              </p>
+            </div>
+            <div style="height: 160px" class="white mgt8 sf column">
+              <p style="font-size: xx-large; margin-top: 0px">coding</p>
+              <p style="font-size: large">
+                learning JavaScript, css and html now. this website is my first
+                product too :)
+              </p>
+            </div>
+            <div style="height: 160px" class="white mgt8 bf">
+              <p style="font-size: xx-large; margin-top: 0px">future content</p>
+              <p style="font-size: large">
+                I will mainly post on IG , around the Hong kong unique things
+                and my discover on my interested aspects, not only these two
+                aspects , but more things that is interesting to me, like the
+                urban myth, the popular trend and fashion in HongKong.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--right chunk-->
+        <div style="flex: 1" class="flex column mgt8">
+          <!--hint chunk-->
+          <div style="height: 150px" class="white bf">
+            <p style="font-size: xx-large; margin-top: 0px">
+              <a
+                id="ig-link"
+                href="https://www.instagram.com/pace_de_arc"
+                target="_blank"
+                style="
+                  text-decoration: none;
+                  color: inherit a:hover {
+                    color: #0077cc !important; /* Changes color on hover */
+                    text-decoration: underline !important; /* Optional: adds underline */
+                  }
+                "
+              >
+                my IG
+              </a>
+            </p>
+            <p style="font-size: large">↑↑↑↑↑↑↑↑↑click this to find me</p>
+          </div>
+          <!--notice chunk-->
+          <div style="height: 300px" class="white bf"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+          const now = new Date();
+          const days = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ];
+          const day = days[now.getDay()];
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const date = now.toLocaleDateString("en-US", options);
+          const time = now.toLocaleTimeString("en-US");
+          document.getElementById(
+            "datetime"
+          ).textContent = `${day}, ${date} | ${time}`;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+       
+    </script>
+  </body>
+  <body class="flex" style="flex-direction: column">
+    <!--main chunk-->
+    <div class="flex1 flex column" style="flex: 1; overflow: auto">
+      <!-- Your existing content -->
+    </div>
+
+    <!-- Footer -->
+    <div
+      style="
+        padding: 12px;
+        text-align: center;
+        background-color: white;
+        box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+        font-family: Arial;
+        font-size: 14px;
+      "
+    >
+      © 2025 Hugo, Cheng Ho Hin. All rights reserved. But hey, there is nothing
+      deserving to be stealing :/
+    </div>
+
+    <script>
+      // Your existing datetime script
+    </script>
+  </body>
+</html>
